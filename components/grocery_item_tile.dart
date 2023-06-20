@@ -1,45 +1,44 @@
 import 'package:flutter/material.dart';
+import 'package:project1/main.dart';
 
 class GroceryItemTile extends StatelessWidget {
   final String itemName;
   final String itemPrice;
   final String imagePath;
   final color;
-  void Function()? onPressed;
+  void function() {}
+  var onPressed;
 
-  GroceryItemTile(
-      {super.key,
-      required this.itemName,
-      required this.itemPrice,
-      required this.imagePath,
-      required this.color,
-      required this.onPressed});
+  GroceryItemTile({
+    super.key,
+    required this.itemName,
+    required this.itemPrice,
+    required this.imagePath,
+    required this.color,
+    required this.onPressed,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(12.0),
+      padding: const EdgeInsets.all(8.0),
       child: Container(
         padding: EdgeInsets.all(8),
         decoration: BoxDecoration(
-            color: color[200], borderRadius: BorderRadius.circular(12)),
+          color: color[100],
+          borderRadius: BorderRadius.circular(12),
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            // image
-            Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Image.asset(
-                imagePath,
-                height: 70,
-              ),
+            //image
+            Image.asset(
+              imagePath,
+              height: 64,
             ),
             //name
-            Text(
-              itemName,
-              style: TextStyle(),
-            ),
-            // price and button
+            Text(itemName),
+            // price + button
             MaterialButton(
               onPressed: onPressed,
               color: color[800],
