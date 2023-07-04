@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:project1/model/cart_model.dart';
+import 'package:project1/models/coffee_shop.dart';
+import 'package:project1/pages/home_page.dart';
 import 'package:project1/pages/intro_page.dart';
 import 'package:provider/provider.dart';
 
@@ -13,8 +14,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (context) => CartModel(),
-      child: MaterialApp(
+      create: (context) => CoffeeShop(),
+      builder: (context, child) => MaterialApp(
         debugShowCheckedModeBanner: false,
         home: introPage(),
       ),
